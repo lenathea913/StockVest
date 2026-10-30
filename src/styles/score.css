@@ -1,0 +1,46 @@
+/* ---------- skor kinerja (0–100 + radar) ---------- */
+.score-panel{
+  margin-top:20px;display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,340px);
+  gap:8px 26px;background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--radius);padding:18px 20px;
+  box-shadow:0 20px 44px -34px rgba(0,0,0,.95);
+}
+.score-title{
+  display:block;font-size:.76rem;font-weight:650;color:var(--muted);
+  letter-spacing:.07em;text-transform:uppercase;
+}
+.score-row{display:flex;align-items:baseline;gap:12px;margin-top:8px;flex-wrap:wrap}
+.score-value{
+  font-size:3.1rem;font-weight:680;letter-spacing:-.045em;line-height:1;
+  font-variant-numeric:tabular-nums;
+}
+.score-band{
+  font-size:.78rem;font-weight:650;padding:3px 10px;border-radius:999px;
+  border:1px solid var(--line-strong);background:var(--surface-3);color:var(--muted);
+}
+.score-band.pos{background:rgba(63,195,122,.1);border-color:#1f4a35;color:#7fd8a8}
+.score-band.neg{background:rgba(239,95,86,.1);border-color:#552724;color:#ff9b94}
+.score-meta{margin-top:8px;font-size:.8rem;color:var(--muted-2);max-width:52ch}
+
+.score-comps{display:grid;gap:8px;margin-top:16px}
+.sc-row{display:grid;grid-template-columns:minmax(120px,168px) 1fr 30px;gap:10px;align-items:center}
+.sc-label{font-size:.78rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sc-bar{display:block;height:7px;border-radius:99px;background:var(--surface-3);overflow:hidden}
+.sc-fill{
+  display:block;height:100%;border-radius:99px;background:var(--muted-2);
+  transition:width .45s cubic-bezier(.16,.9,.3,1);
+}
+.sc-fill.pos{background:var(--profit)}
+.sc-fill.neg{background:var(--loss)}
+.sc-val{font-size:.76rem;text-align:right;color:var(--muted);font-variant-numeric:tabular-nums}
+.sc-val.pos{color:var(--profit)}
+.sc-val.neg{color:var(--loss)}
+
+.score-radar{position:relative;min-height:280px;align-self:center}
+#scoreRadar{display:block;width:100%;height:280px}
+
+@media (max-width:860px){
+  .score-panel{grid-template-columns:1fr}
+  .score-radar{min-height:300px}
+  #scoreRadar{height:300px}
+}

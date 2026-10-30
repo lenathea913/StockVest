@@ -1,0 +1,239 @@
+/* ---------- top bar ---------- */
+.topbar{
+  position:sticky;top:0;z-index:30;background:rgba(12,15,19,.94);
+  border-bottom:1px solid var(--line);
+  backdrop-filter:saturate(140%) blur(6px);
+  box-shadow:0 10px 30px -18px rgba(0,0,0,.9);
+}
+.topbar-inner{
+  max-width:1320px;margin:0 auto;padding:12px var(--pad);
+  display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+}
+.brand{display:flex;align-items:baseline;gap:9px;margin-right:auto}
+.brand-mark{
+  display:grid;place-items:center;width:26px;height:26px;border-radius:7px;
+  background:linear-gradient(140deg,#f5c964,var(--accent) 55%,#c98f26);
+  color:var(--accent-ink);font-weight:750;font-size:.86rem;
+  transform:translateY(3px);
+  box-shadow:0 3px 12px -4px rgba(227,168,60,.55), inset 0 1px 0 rgba(255,255,255,.35);
+}
+.brand-sub{color:var(--muted);font-size:.82rem}
+.topbar-actions{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+
+.segmented{display:flex;background:var(--surface-2);border:1px solid var(--line);border-radius:8px;padding:3px;gap:2px}
+.segmented button{
+  padding:5px 11px;border-radius:6px;font-size:.8rem;font-weight:600;color:var(--muted);
+  transition:background .16s ease,color .16s ease;
+}
+.segmented button:hover{color:var(--text)}
+.segmented button[aria-pressed="true"]{background:var(--surface-3);color:var(--text);box-shadow:0 1px 2px #0007}
+
+/* ---------- periode ringkasan ---------- */
+.period-seg button{font-size:.76rem;padding:5px 9px;white-space:nowrap}
+.period-bar{
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+  margin:-6px 0 14px;
+}
+.period-lbl{font-size:.78rem;color:var(--muted)}
+.period-sep{color:var(--muted-2)}
+.period-bar .input{height:32px;font-size:.82rem}
+.period-note{
+  margin:8px 0 0;font-size:.76rem;color:var(--muted-2);
+  text-align:right;font-variant-numeric:tabular-nums;
+}
+
+.btn{
+  display:inline-flex;align-items:center;gap:7px;height:36px;padding:0 13px;
+  border:1px solid var(--line-strong);background:var(--surface-2);border-radius:8px;
+  font-size:.87rem;font-weight:560;transition:background .16s ease,border-color .16s ease,transform .1s ease,box-shadow .16s ease;
+}
+.btn:hover{background:var(--surface-3);border-color:#414c5a}
+.btn:active{transform:translateY(1px)}
+.btn-primary{
+  background:linear-gradient(180deg,#f2bc55,var(--accent));border-color:var(--accent);
+  color:var(--accent-ink);font-weight:650;
+  box-shadow:0 4px 14px -6px rgba(227,168,60,.6), inset 0 1px 0 rgba(255,255,255,.35);
+}
+.btn-primary:hover{
+  background:linear-gradient(180deg,#f7c96c,var(--accent-strong));border-color:var(--accent-strong);
+  box-shadow:0 6px 18px -6px rgba(227,168,60,.75), inset 0 1px 0 rgba(255,255,255,.4);
+}
+.btn-ghost{background:transparent;border-color:transparent;color:var(--muted)}
+.btn-ghost:hover{background:var(--surface-2);border-color:var(--line);color:var(--text)}
+.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+.rate-chip{
+  display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 11px;border-radius:8px;
+  border:1px dashed var(--line-strong);color:var(--muted);font-size:.8rem;
+  transition:color .16s ease,border-color .16s ease;
+}
+.rate-chip:hover{color:var(--text);border-color:var(--accent)}
+
+/* ---------- layout ---------- */
+main{max-width:1320px;margin:0 auto;padding:0 var(--pad) 72px}
+section{margin-top:52px}
+section:first-child{margin-top:34px}
+.section-head{
+  display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:16px;
+}
+.section-head .hint{color:var(--muted);font-size:.84rem}
+.section-head .spacer{margin-left:auto}
+.section-head > h2{
+  position:relative;padding-left:13px;
+}
+.section-head > h2::before{
+  content:"";position:absolute;left:0;top:.14em;bottom:.1em;width:4px;border-radius:99px;
+  background:linear-gradient(180deg,#f5c964,var(--accent));
+  box-shadow:0 0 10px rgba(227,168,60,.45);
+}
+
+/* ---------- summary ledger ---------- */
+.ledger{
+  display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;
+  background:none;border:none;border-radius:0;overflow:visible;box-shadow:none;
+}
+/* kartu metrik gaya dasbor: tiap kartu berdiri sendiri */
+.ledger .stat{
+  display:flex;flex-direction:column;gap:7px;background:var(--surface);
+  border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+  padding:14px 15px 13px;box-shadow:0 20px 44px -36px rgba(0,0,0,.95);
+  transition:border-color .16s ease,transform .16s ease;
+}
+.ledger .stat:hover{transform:translateY(-2px);border-color:#3a4552;background:var(--surface)}
+.ledger .stat::after{display:none}
+.stat{
+  padding:16px 18px 15px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+  min-width:0;position:relative;
+  transition:background .18s ease;
+}
+.stat::after{
+  content:"";position:absolute;inset:0 0 auto;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.06) 20%,transparent 80%);
+  pointer-events:none;
+}
+.stat:hover{background:linear-gradient(180deg,rgba(227,168,60,.06),rgba(227,168,60,0) 72%)}
+.stat-label{display:flex;align-items:center;gap:6px;color:var(--muted);font-size:.73rem;letter-spacing:.05em;text-transform:uppercase;font-weight:660}
+.stat-label .ic{opacity:.72;flex-shrink:0}
+.stat-value{
+  display:block;margin-top:7px;font-size:1.42rem;font-weight:640;letter-spacing:-0.028em;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.ledger .stat-value{margin-top:0;font-size:1.52rem}
+.stat-value.pos{text-shadow:0 0 22px rgba(63,195,122,.28)}
+.stat-value.neg{text-shadow:0 0 22px rgba(239,95,86,.25)}
+.stat-note{display:block;margin-top:3px;color:var(--muted-2);font-size:.76rem}
+.ledger .stat-note{margin-top:auto;padding-top:2px}
+/* delta vs periode sebelumnya */
+.stat-delta{display:block;font-size:.77rem;font-weight:650;letter-spacing:-.01em}
+.stat-delta.pos{color:var(--profit)}
+.stat-delta.neg{color:var(--loss)}
+.stat-delta.flat{color:var(--muted)}
+/* gauge melingkar (pemenang %) */
+.stat-gauge-row{display:flex;align-items:center;gap:13px;min-width:0}
+.gauge{
+  position:relative;width:74px;height:74px;flex-shrink:0;border-radius:50%;display:grid;place-items:center;
+  background:conic-gradient(var(--accent) calc(var(--p) * 1%), var(--surface-3) 0);
+}
+.gauge::before{content:"";position:absolute;inset:6px;border-radius:50%;background:var(--surface);border:1px solid var(--line)}
+.gauge-v{position:relative;font-size:.9rem;font-weight:680;letter-spacing:-.02em}
+.gauge-side{display:flex;flex-direction:column;gap:1px;font-size:.78rem;line-height:1.3;min-width:0}
+.gauge-side b{font-weight:650}
+.side-lbl{font-size:.7rem;color:var(--muted-2);line-height:1.25;font-weight:500}
+/* bar rasio menang vs kalah */
+.split{display:flex;height:7px;border-radius:99px;overflow:hidden;background:var(--surface-3);gap:2px}
+.split i{display:block;height:100%;min-width:3px}
+.split i.a{background:var(--profit)}
+.split i.b{background:var(--loss)}
+.filter-note{margin-top:12px;color:var(--muted);font-size:.83rem}
+
+/* ---------- backup & pulihkan ---------- */
+.backup-actions{display:flex;gap:8px;flex-wrap:wrap}
+.backup-msg{margin-top:2px;font-size:.85rem}
+.backup-msg.ok{color:var(--profit)}
+.backup-msg.err{color:var(--loss)}
+.backup-age{margin-top:2px;font-size:.8rem}
+.backup-age.ok{color:var(--muted)}
+.backup-age.err{color:var(--loss)}
+
+/* ---------- statistik per setup & ticker ---------- */
+.breakdown{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.bd-card{
+  background:linear-gradient(180deg,var(--surface-2),var(--surface));border:1px solid var(--line);border-radius:var(--radius);
+  padding:14px 16px;min-width:0;
+  box-shadow:0 14px 34px -28px rgba(0,0,0,.9);
+  transition:border-color .18s ease,transform .18s ease,box-shadow .18s ease;
+}
+.bd-card:hover{border-color:#39424f;transform:translateY(-2px);box-shadow:0 18px 36px -26px rgba(0,0,0,.95)}
+.bd-title{font-size:.8rem;font-weight:650;color:var(--muted);letter-spacing:.03em;margin-bottom:8px}
+.bd-scroll{overflow-x:auto}
+/* Per ticker: cukup 5 baris, sisanya lewat scroll */
+.bd-scroll-limit{
+  max-height:197px;
+  padding-bottom:2px;
+  overflow-y:auto;
+  overscroll-behavior:contain;
+}
+.bd-scroll-limit thead th{background:var(--surface-2)}
+.bd-table{width:100%;min-width:0;border-collapse:collapse;font-size:.86rem}
+.bd-table th{
+  text-align:left;color:var(--muted-2);font-weight:600;font-size:.72rem;
+  letter-spacing:.03em;padding:4px 6px;border-bottom:1px solid var(--line);
+}
+.bd-table th.r,.bd-table td.r{text-align:right}
+.bd-table td{padding:6px;border-bottom:1px solid var(--line)}
+.bd-table tbody tr:last-child td{border-bottom:none}
+.bd-table td.sym{font-weight:600;white-space:nowrap}
+.hist{display:grid;gap:9px;align-content:start}
+.hist-row{display:grid;grid-template-columns:64px 1fr 32px;gap:8px;align-items:center}
+.hist-label{font-size:.76rem;color:var(--muted);text-align:right;white-space:nowrap}
+.hist-bar{
+  position:relative;display:flex;align-items:center;height:20px;border-radius:5px;
+  background:var(--surface-3);overflow:hidden;
+}
+/* garis nol di tengah — batang negatif ke kiri, positif ke kanan */
+.hist-bar::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:var(--line-strong);z-index:1}
+.hist-half{display:flex;align-items:center;width:50%;height:100%}
+.hist-half.l{justify-content:flex-end}
+.hist-half.r{justify-content:flex-start}
+.hist-fill{display:block;height:100%;border-radius:5px;transition:width .3s ease}
+.hist-fill.neg{background:linear-gradient(90deg,#d94f47,var(--loss))}
+.hist-fill.pos{background:linear-gradient(90deg,#2f9e63,var(--profit))}
+.hist-count{font-size:.78rem;text-align:right;color:var(--muted)}
+
+/* ---------- kalender P&L ---------- */
+.kal-nav{display:flex;align-items:center;gap:4px}
+.kal-month{font-weight:650;font-size:.9rem;min-width:132px;text-align:center}
+.cal-card{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:14px 16px 12px;box-shadow:0 20px 44px -36px rgba(0,0,0,.95);
+}
+.cal-foot{
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-top:12px;
+  padding-top:10px;border-top:1px solid var(--line);font-size:.8rem;color:var(--muted);
+}
+.cal{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:6px}
+.cal-wd{font-size:.72rem;color:var(--muted-2);text-align:center;font-weight:650;letter-spacing:.05em;padding-bottom:2px}
+.cal-cell{
+  min-height:74px;border:1px solid var(--line);border-radius:8px;background:var(--surface);
+  padding:6px 8px;display:flex;flex-direction:column;gap:1px;min-width:0;
+  transition:border-color .16s ease,transform .16s ease;
+}
+.cal-n{font-size:.68rem;color:var(--muted-2);line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cal-cell:not(.cal-blank):hover{border-color:#414c5a;transform:translateY(-1px)}
+.cal-blank{background:transparent;border-color:transparent}
+.cal-d{font-size:.74rem;color:var(--muted)}
+.cal-v{font-size:.78rem;font-weight:650;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cal-day.win .cal-v{color:var(--profit)}
+.cal-day.loss .cal-v{color:var(--loss)}
+.cal-day.flat .cal-v{color:var(--muted)}
+
+/* ---------- kalkulator position sizing ---------- */
+.calc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:16px;align-items:start}
+.calc-inputs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.calc-out{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  border-top:1px solid var(--line);border-left:1px solid var(--line);
+  background:var(--surface);border-radius:var(--radius);overflow:hidden}
+
+footer{
+  border-top:1px solid var(--line);color:var(--muted-2);font-size:.78rem;
+  max-width:1320px;margin:0 auto;padding:18px var(--pad) 34px;
+}

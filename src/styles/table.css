@@ -1,0 +1,103 @@
+/* ---------- filters ---------- */
+.filters{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+.field-inline{position:relative;display:flex;align-items:center}
+.field-inline svg{position:absolute;left:10px;color:var(--muted-2);pointer-events:none}
+.input,.select{
+  height:36px;background:var(--surface-2);border:1px solid var(--line);border-radius:8px;
+  padding:0 11px;font-size:.87rem;transition:border-color .16s ease,background .16s ease;
+}
+.input::placeholder{color:var(--muted-2)}
+.input:hover,.select:hover{border-color:var(--line-strong)}
+.input:focus,.select:focus{border-color:var(--accent);outline:none;box-shadow:0 0 0 3px #e3a83c22}
+.field-inline .input{padding-left:32px;width:230px}
+.select{
+  appearance:none;padding-right:28px;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2398a3b1' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'><polyline points='6 9 12 15 18 9'/></svg>");
+  background-repeat:no-repeat;background-position:right 10px center;
+}
+.input[type="date"]{color:var(--muted);min-width:150px}
+.input[type="date"]::-webkit-calendar-picker-indicator{filter:invert(.72);cursor:pointer}
+
+/* ---------- table ---------- */
+.table-wrap{
+  border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);
+  overflow-x:auto;overflow-y:visible;
+  box-shadow:0 20px 44px -34px rgba(0,0,0,.95);
+}
+/* tombol lewati batas 15 baris */
+.table-more{display:flex;justify-content:center;margin-top:12px}
+.table-more .btn{font-size:.84rem}
+table{width:100%;border-collapse:collapse;min-width:1150px}
+thead th{
+  position:sticky;top:0;z-index:2;background:transparent;
+  text-align:left;font-size:.72rem;font-weight:700;color:var(--muted);letter-spacing:.07em;text-transform:uppercase;
+  padding:11px 12px;border-bottom:1px solid var(--line-strong);white-space:nowrap;
+}
+thead th.r{text-align:right}
+th button.sorter{
+  display:inline-flex;align-items:center;gap:5px;color:inherit;font:inherit;letter-spacing:inherit;
+}
+th button.sorter:hover{color:var(--text)}
+th button.sorter .caret{opacity:0;transition:opacity .15s ease,transform .15s ease}
+th[aria-sort] button.sorter{color:var(--text)}
+th[aria-sort] button.sorter .caret{opacity:1}
+th[aria-sort="ascending"] button.sorter .caret{transform:rotate(180deg)}
+tbody td{
+  padding:11px 12px;border-bottom:1px solid var(--line);font-size:.875rem;vertical-align:middle;
+  white-space:nowrap;
+}
+tbody tr:last-child td{border-bottom:none}
+tbody tr.main-row{transition:background .13s ease,box-shadow .13s ease}
+tbody tr.main-row:hover{background:var(--surface-2);box-shadow:inset 3px 0 0 var(--accent)}
+td.r{text-align:right}
+td.sym{font-weight:640}
+td.notes-cell{white-space:normal}
+.badge{
+  display:inline-flex;align-items:center;gap:5px;padding:2px 8px;border-radius:999px;
+  font-size:.74rem;font-weight:600;border:1px solid var(--line-strong);color:var(--muted);
+  background:var(--surface-3);
+}
+.badge.long{background:rgba(63,195,122,.1);border-color:#1f4a35;color:#7fd8a8}
+.badge.short{background:rgba(239,95,86,.1);border-color:#552724;color:#ff9b94}
+/* hasil trade sebagai chip teks — warna hanya penguat, teksnya yang membawa arti */
+.res-chip{
+  display:inline-block;padding:2px 8px;border-radius:5px;font-size:.7rem;font-weight:700;
+  letter-spacing:.06em;border:1px solid var(--line-strong);background:var(--surface-3);color:var(--muted);
+}
+.res-chip.win{background:rgba(63,195,122,.1);border-color:#1f4a35;color:#7fd8a8}
+.res-chip.loss{background:rgba(239,95,86,.1);border-color:#552724;color:#ff9b94}
+.res-chip.flat{background:var(--surface-3);border-color:var(--line-strong);color:var(--muted)}
+.detail-row td{
+  background:#0f1319;padding:0;border-bottom:1px solid var(--line);white-space:normal;
+}
+.detail-inner{padding:16px 14px 18px;display:grid;gap:14px}
+.detail-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px 22px}
+
+/* ---------- pilih massal ---------- */
+th.chk,td.chk{width:36px;padding-right:0}
+.chk input[type="checkbox"]{accent-color:var(--accent);width:15px;height:15px;cursor:pointer}
+.bulk-bar{display:flex;align-items:center;gap:10px;margin:-2px 0 12px;flex-wrap:wrap}
+.bulk-bar .spacer{margin-left:auto}
+.bulk-count{font-size:.85rem;font-weight:650}
+.btn-danger{background:var(--loss);border-color:var(--loss);color:#fff;font-weight:650}
+.btn-danger:hover{background:#ff6f66;border-color:#ff6f66}
+.kv .k{display:block;color:var(--muted-2);font-size:.72rem;letter-spacing:.03em}
+.kv .v{display:block;margin-top:3px;font-size:.88rem}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{
+  font-size:.74rem;padding:2px 8px;border-radius:999px;
+  background:linear-gradient(180deg,#31270f,#2a2113);
+  border:1px solid #4a3a17;color:#f0c877;
+}
+.tag.calm{background:#12251b;border-color:#1e4432;color:#7fd8a8}
+.note-text{max-width:72ch;color:#c8d0da;font-size:.87rem;white-space:pre-wrap}
+.row-actions{display:flex;gap:4px;justify-content:flex-end}
+.icon-btn{
+  width:30px;height:30px;display:grid;place-items:center;border-radius:7px;color:var(--muted);
+  border:1px solid transparent;transition:background .14s ease,color .14s ease,border-color .14s ease;
+}
+.icon-btn:hover{background:var(--surface-3);border-color:var(--line-strong);color:var(--text)}
+.icon-btn.danger:hover{color:var(--loss);border-color:#5c2a26}
+.expand-btn svg{transition:transform .18s ease}
+.expand-btn[aria-expanded="true"] svg{transform:rotate(90deg)}
+.empty-cell{padding:34px 20px;text-align:center;color:var(--muted);white-space:normal}

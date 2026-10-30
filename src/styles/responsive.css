@@ -1,0 +1,26 @@
+@media (max-width:1240px){
+  .ledger{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (max-width:860px){
+  .ledger{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .breakdown{grid-template-columns:1fr}
+  .cal-cell{min-height:66px;padding:5px 6px}
+  .preview .p-hint{margin-left:0;text-align:left;max-width:none}
+}
+@media (max-width:560px){
+  .ledger{grid-template-columns:1fr}
+  .topbar-inner{gap:10px}
+  .brand-sub{display:none}
+  .btn span.lbl-txt{display:none}
+  .btn{padding:0 11px}
+  .field-inline .input{width:100%}
+  .field-inline{flex:1 1 100%}
+  .filters .select,.filters .input[type="date"]{flex:1 1 46%}
+  .cal{gap:3px}
+  .cal-v{font-size:.68rem}
+  .kal-month{min-width:110px}
+  section{margin-top:42px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
