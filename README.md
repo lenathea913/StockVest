@@ -1,6 +1,6 @@
 # 📈 StockVest — Jurnal Trading Saham
 
-[![Build](https://github.com/lenathea913/stockvest/actions/workflows/ci.yml/badge.svg)](https://github.com/lenathea913/stockvest/actions/workflows/ci.yml)
+[![Build](https://github.com/lenathea913/StockVest/actions/workflows/ci.yml/badge.svg)](https://github.com/lenathea913/StockVest/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 ![Vite](https://img.shields.io/badge/build-Vite_5-646CFF.svg)
 ![Vanilla JS](https://img.shields.io/badge/code-vanilla_JS-DAA520.svg)
@@ -38,8 +38,8 @@ Double-click **`start.bat`** → browser terbuka otomatis di `http://localhost:5
 ### Cara B — Manual (Windows / Mac / Linux)
 
 ```bash
-git clone https://github.com/lenathea913/stockvest.git
-cd stockvest
+git clone https://github.com/lenathea913/StockVest.git
+cd StockVest
 npm install     # sekali saja
 npm run dev     # lalu buka http://localhost:5174
 ```
@@ -55,7 +55,7 @@ npm run dev     # lalu buka http://localhost:5174
 ## 🧱 Struktur proyek
 
 ```
-stockvest/
+StockVest/
 ├── index.html            # seluruh markup: ringkasan, chart, kalender, tabel, dialog
 ├── vite.config.js        # port dikunci, output build
 └── src/
@@ -100,7 +100,7 @@ Kontribusi sangat terbuka:
 3. Pastikan `npm run build` lulus
 4. Buka Pull Request yang menjelaskan *perubahan* dan *mengapa*
 
-Laporkan bug lewat [Issues](https://github.com/lenathea913/stockvest/issues) — sertakan langkah reproduksi dan browser yang dipakai.
+Laporkan bug lewat [Issues](https://github.com/lenathea913/StockVest/issues) — sertakan langkah reproduksi dan browser yang dipakai.
 
 Ide yang belum didukung dan sedang dibuka untuk diskusi: impor data broker, konversi lot, pemetaan hari bursa, tema terang.
 
