@@ -8,6 +8,9 @@ export default defineConfig({
     port: 5174,
     strictPort: true,
   },
+  // Path aset relatif agar build statis tetap benar di GitHub Pages
+  // (https://lenathea913.github.io/StockVest/) maupun saat dibuka lokal.
+  base: './',
   build: {
     outDir: 'dist',
     sourcemap: false,
