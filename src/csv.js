@@ -148,7 +148,8 @@ function importCsv(text){
     const entry = num(g("entry")), exit = num(g("exit")), qty = num(g("qty"));
     if(!date || !symbol || !side || !isFinite(entry) || !isFinite(exit) || !(qty > 0)){ skipped++; continue; }
 
-    const emotionN = Number(g("emotion"));
+    // ekspor sendiri menulis emosi sebagai "4 · Cemas", jadi ambil angkanya saja
+    const emotionN = Number((g("emotion").match(/^\d+/) || [])[0]);
     const stopN = num(g("stop"));
     const feeN = num(g("fee"));
     const trade = {
