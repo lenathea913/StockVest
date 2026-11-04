@@ -3,6 +3,8 @@
 [![Build](https://github.com/lenathea913/StockVest/actions/workflows/ci.yml/badge.svg)](https://github.com/lenathea913/StockVest/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 ![Vite](https://img.shields.io/badge/build-Vite_5-646CFF.svg)
+
+**Demo online:** <https://lenathea913.github.io/StockVest/> — build statis repo ini. Datanya tetap lokal di browser, jadi terbuka dalam keadaan kosong; pindahkan dari versi lokal lewat backup.
 ![Vanilla JS](https://img.shields.io/badge/code-vanilla_JS-DAA520.svg)
 
 > **English:** A free, open-source **stock trading journal** that runs fully local in your browser — no server, no account, no data ever leaves your machine. Log entries, exits, stop losses, commissions, setups, mistakes and emotions; get P&L, R-multiple, win rate, profit factor, expectancy, a performance score with radar, an equity curve, a loss-factor pie chart, a P&L calendar, and CSV import/export. Built with vanilla JS + Vite, MIT licensed.
@@ -47,6 +49,7 @@ npm run dev     # lalu buka http://localhost:5174
 | Perintah | Fungsi |
 | --- | --- |
 | `npm run dev` | server pengembangan (port **5174**, dikunci) |
+| `npm test` | unit test P&L/R, skor, impor CSV, backup (`node --test`, tanpa dependensi) |
 | `npm run build` | build produksi ke `dist/` |
 | `npm run preview` | pratinjau hasil build |
 
